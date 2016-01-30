@@ -1,0 +1,15 @@
+machine:
+  python:
+    version: 2.7.8
+
+dependencies:
+  pre:
+    - pip install -r requirements/dev.txt
+
+test:
+  pre:
+    - flake8 study
+  override:
+    - python study/manage.py test comment
+  post:
+    - mv cover $CIRCLE_ARTIFACTS
