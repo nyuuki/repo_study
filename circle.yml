@@ -10,6 +10,7 @@ test:
   pre:
     - flake8 study
   override:
+    - python study/manage.py
     - python study/manage.py test comment
   post:
-    - mv cover $CIRCLE_ARTIFACTS
+    - mv study/cover $CIRCLE_ARTIFACTS
